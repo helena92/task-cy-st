@@ -77,8 +77,8 @@ describe("Tasks", () => {
 
     after(() => {
       // ideally, cleanup should be done via API to avoid this conditional
+      cy.log("Cleaning up created tasks ...");
       if (!testPassed) {
-        cy.log("Cleaning up created tasks ...");
         TasksPage.deleteTask([testTaskName1, testTaskName2, testTaskName3]);
       } else {
         TasksPage.deleteTask(testTaskName3);
