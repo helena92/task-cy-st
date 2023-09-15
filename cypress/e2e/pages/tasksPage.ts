@@ -7,8 +7,6 @@ class TasksPage {
   elements = {
     taskTextArea: () => cy.getById("task"), // cy.getById is a custom command created in support/commands.ts
     submitButton: () => cy.getById("submit"),
-    // tasksTable: () => cy.get("table.table"),
-    // lastTableRow: () => cy.getByClass("table").find('tr').last().find('td').first()
     tasksTableRows: () => cy.getByClass("table").find("tr"),
     lastTableRowCells: () => this.elements.tasksTableRows().last().find("td"),
     deleteButton: (taskName) =>
@@ -48,7 +46,7 @@ class TasksPage {
 
   deleteTask(taskNames: string | Array<string>) {
     const tasks = Array.isArray(taskNames) ? taskNames : [taskNames];
-    // Loop through the task names and create each task
+    // Loop through the task names and delete each task
     tasks.forEach((taskName) => {
       const formattedTaskName = this.formatTaskName(taskName);
       this.elements.deleteButton(formattedTaskName).click();

@@ -18,7 +18,7 @@ describe("User Account - Password Settings", () => {
   });
 
   after(() => {
-    // This app allows to change the password to the old value but most of the services don't.
+    // This app allows to change the password to the old value but most services don't.
     // If reverting password back is not possible, we'd use API endpoints for creating a new user in before() hook and deleting them here in after() hook via API.
     cy.log(
       "Changing password back to the value in Cypress.env('testUserPassword')",

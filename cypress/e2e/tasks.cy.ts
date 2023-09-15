@@ -22,8 +22,8 @@ describe("Tasks", () => {
     });
 
     after(() => {
+      // ideally, cleanup should be done via API to avoid this conditional
       if (testPassed) {
-        // ideally, this should be done via API to avoid this conditional
         cy.log("Cleaning up created tasks ...");
         TasksPage.deleteTask(testTaskName);
       }
@@ -45,8 +45,8 @@ describe("Tasks", () => {
     });
 
     after(() => {
+      // ideally, cleanup should be done via API to avoid this conditional
       if (!testPassed) {
-        // ideally, this should be done via API to avoid this conditional
         cy.log("Cleaning up created tasks ...");
         TasksPage.deleteTask(testTaskName);
       }
@@ -75,8 +75,8 @@ describe("Tasks", () => {
     });
 
     after(() => {
+      // ideally, cleanup should be done via API to avoid this conditional
       if (!testPassed) {
-        // ideally, this should be done via API to avoid this conditional
         cy.log("Cleaning up created tasks ...");
         TasksPage.deleteTask([testTaskName1, testTaskName2, testTaskName3]);
       } else {

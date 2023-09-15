@@ -3,19 +3,19 @@ import UserAccountPage from "./pages/userAccountPage";
 
 describe("Sign Up", () => {
   const date = Date.now();
-  const randomEmail = `${date}@gmail.com`;
-  const randomName = `QA ${date}`;
-  const randomPassword = `pwd${date}`;
+  const testUserEmail = `${date}@gmail.com`;
+  const testUserName = `QA ${date}`;
+  const testUserPassword = `pwd${date}`;
 
   beforeEach(() => SignUpPage.visit());
 
   it("should be able to sign up", () => {
-    SignUpPage.signup(randomName, randomEmail, randomPassword);
+    SignUpPage.signup(testUserName, testUserEmail, testUserPassword);
     UserAccountPage.elements.accountDropdown().should("be.visible");
   });
 
-  it("should not be able to sign up existing user", () => {
-    SignUpPage.signup(randomName, randomEmail, randomPassword);
+  it("should not be able to sign up with existing user", () => {
+    SignUpPage.signup(testUserName, testUserEmail, testUserPassword);
     SignUpPage.elements
       .emailErrorMessage()
       .contains("Please Enter a valid Email");
