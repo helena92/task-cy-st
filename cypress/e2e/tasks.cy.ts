@@ -15,10 +15,11 @@ describe("Tasks", () => {
   });
 
   describe("create task", () => {
-    let testPassed = true;
+    let testPassed = false;
 
     it("should create a task", () => {
       TasksPage.createTask(testTaskName);
+      testPassed = true;
     });
 
     after(() => {
@@ -31,7 +32,7 @@ describe("Tasks", () => {
   });
 
   describe("delete task", () => {
-    let testPassed = true;
+    let testPassed = false;
 
     beforeEach(() => {
       cy.log("Creating a test task ...");
@@ -54,7 +55,7 @@ describe("Tasks", () => {
   });
 
   describe("delete multiple tasks", () => {
-    let testPassed = true;
+    let testPassed = false;
     const testTaskName1 = `test1\n${date}`;
     const testTaskName2 = `test2\n${date}`;
     const testTaskName3 = `test3\n${date}`;
