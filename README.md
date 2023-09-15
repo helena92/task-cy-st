@@ -4,7 +4,7 @@ Make sure you run `npm i` to install project dependencies.
 
 You can launch tests in Cypress Tets Runner with `npm run cy:open` or headlessly with `npm run cy:run`.
 
-# Test Report
+## Test Report
 
 The test report is saved as an artifact for each CI pipeline by using `.github/workflows/ci.yml`.
 To view the latest report, go to https://github.com/helena92/task-cy-st/actions and open the most recent test run.
